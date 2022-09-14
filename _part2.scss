@@ -1,0 +1,60 @@
+.photos {
+  margin: 0 auto;
+  padding-top: 25px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  .singlephoto {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    .card__image {
+      border-radius: 10px;
+      width: 100%;
+      display: block;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: 0.5s ease;
+      background-color: rgb(68, 61, 61);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .button {
+        background-color: $primarybtn;
+        border: none;
+        color: $textcolor;
+        border-radius: 2px;
+        position: absolute;
+        margin: 0 auto;
+        font-size: 12px;
+      }
+    }
+    &:hover .overlay {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 368px) {
+  .photos {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .photos {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
